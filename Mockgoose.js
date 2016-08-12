@@ -73,6 +73,7 @@ module.exports = function(mongoose, db_opts) {
 
     var orig_dbpath = db_opts.dbpath;
     start_server(db_opts, function(mockgoose_uri) {
+        mockgoose_uri = mockgoose_uri.toString();
         // for now no errors
         mongoose.connect = function() {
             connect_type = "connect";
